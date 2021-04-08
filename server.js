@@ -11,8 +11,8 @@ nunjucks.configure("views", {
     express:server
 });
 
-server.get("/", function(req, res) {
-    return res.render("index")
+server.get("/about", function(req, res) {
+    return res.render("about")
 });
 
 server.get("/portfolio", function(req, res) {

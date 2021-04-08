@@ -1,21 +1,12 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
+{% extends "layout.html" %}
 
-    <title>Leonardo Brizolla</title>
-    
+{% block head %}
+    <title>Portfolio - Leonardo Brizolla</title> 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-    <link rel="stylesheet" href="/styles.css">
-</head>
-<body>
-    <header>
-        <div class="links">
-            <a href="/">Sobre</a>
-            <a href="/portfolio">Aulas</a>
-        </div>
-    </header>
+            rel="stylesheet">
+{% endblock %}
+
+{% block content %}
 
     <div id="wrapper">
         <h1>Aulas</h1>
@@ -128,5 +119,4 @@
 
     <script src="scripts.js"></script>
 
-</body>
-</html>
+{% endblock %}
