@@ -9,11 +9,24 @@ server.use(express.static('public'));
 server.set("view engine", "njk");
 
 nunjucks.configure("views", {
-    express:server
+    express:server,
+    autoescape: false
 });
 
 server.get("/about", function(req, res) {
-    return res.render("about");
+    const about = {
+        avatar_url: "https://avatars.githubusercontent.com/u/34755142?v=4",
+        name: "Leonardo Brizolla",
+        role: 'Aluno - <a href="https://rocketseat.com.br/" target="_blank">Rocketseat</a>',
+        description: "Programador full-stack, focado na qualidade de desenvolvimento de software",
+        links: [
+            { name: "Github", url: "https://github.com/LeonardoBrizolla/" },
+            { name: "LinkedIn", url: "https://www.linkedin.com/in/leonardo-brizolla/" },
+            { name: "Twitter", url: "https://twitter.com/leobrizaa/" },
+        ],
+    }
+
+    return res.render("about", { about });
 });
 
 server.get("/portfolio", function(req, res) {

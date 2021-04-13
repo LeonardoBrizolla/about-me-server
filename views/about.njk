@@ -1,22 +1,22 @@
 {% extends "layout.njk" %}
 
 {% block head %}
-    <title>Sobre - Leonardo Brizolla</title>   
+    <title>Sobre - {{ about.name }}</title>   
 {% endblock %}
 
 {% block content %}
 
     <div id="wrapper">
-        <img src="https://avatars.githubusercontent.com/u/34755142?v=4" alt="Leonardo Brizolla">
-        <h1>Leonardo Brizolla</h1>
-        <h2>Aluno - <a href="https://rocketseat.com.br/" target="_blank">Rocketseat</a></h2>
-        <p>Programador full-stack, focado na qualidade de desenvolvimento de software</p>
+        <img src="{{ about.avatar_url }}" alt="{{ about.name }}">
+        <h1>{{ about.name }}</h1>
+        <h2>{{ about.role }}</h2>
+        <p>{{ about.description }}</p>
     </div>
 
     <div id="links-footer" class="links">
-        <a href="https://github.com/LeonardoBrizolla/" target="_blank">Github</a>
-        <a href="https://www.linkedin.com/in/leonardo-brizolla/" target="_blank">LinkedIn</a>
-        <a href="https://twitter.com/leobrizaa/" target="_blank">Twitter</a>
+        {% for link in about.links %}
+        <a href="{{ link.url }}" target="_blank">{{ link.name }}</a>
+        {% endfor %}
     </div>
 
 {% endblock %}
