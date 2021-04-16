@@ -47,7 +47,7 @@ server.get("/video", function(req, res) {
         return res.send("Video not found!");
     }
 
-    return res.render("Video", { video })
+    return res.render("Video", { item: video })
 });
 
 server.listen(5000, function() {

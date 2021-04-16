@@ -177,3 +177,10 @@ iframe  {
     top: -10px;
     opacity: 0.9;
 }
+
+/* VIDEO PAGE */
+
+.video {
+    margin: 0 auto;
+    max-width: 800px;
+}
